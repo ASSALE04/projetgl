@@ -1,0 +1,225 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme d'Inscription aux Concours ESATIC</title>
+    <link rel="stylesheet" href="{% static 'css/sty.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Plateforme d'Inscription aux Concours ESATIC</h1>
+            <p class="subtitle">ESATIC - Année Académique : 2024-2025</p>
+        </header>
+        
+        <div class="steps">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <span class="step-label">Informations Personnelles</span>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <span class="step-label">Cursus</span>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <span class="step-label">Documents</span>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-number">4</div>
+                <span class="step-label">Validation</span>
+            </div>
+        </div>
+        
+        <form id="inscriptionForm">
+            <!-- Étape 1: Informations Personnelles -->
+            <div class="form-step active" id="step1">
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="nom" placeholder=" " required>
+                    <label for="nom">Nom</label>
+                    <div class="error-message">Veuillez entrer votre nom</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="prenom" placeholder=" " required>
+                    <label for="prenom">Prénom</label>
+                    <div class="error-message">Veuillez entrer votre prénom</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateNaissance">Date de naissance</label>
+                    <div class="date-input-container">
+                        <input type="date" class="form-control" id="dateNaissance" required>
+                        <span class="icon">📅</span>
+                    </div>
+                    <div class="error-message">Veuillez entrer votre date de naissance</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="lieuNaissance" placeholder=" " required>
+                    <label for="lieuNaissance">Lieu de naissance</label>
+                    <div class="error-message">Veuillez entrer votre lieu de naissance</div>
+                </div>
+
+                <!-- Ajout : Nationalité -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="nationalite" placeholder=" " required>
+                    <label for="nationalite">Nationalité</label>
+                    <div class="error-message">Veuillez entrer votre nationalité</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="adresse" placeholder=" " required>
+                    <label for="adresse">Adresse</label>
+                    <div class="error-message">Veuillez entrer votre adresse</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="tel" class="form-control" id="telephone" placeholder=" " required>
+                    <label for="telephone">Téléphone</label>
+                    <div class="error-message">Veuillez entrer un numéro de téléphone valide</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="email" class="form-control" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                    <div class="error-message">Veuillez entrer une adresse email valide</div>
+                </div>
+                
+                <div class="form-footer">
+                    <a href="/" class="btn btn-outline-secondary">Accueil</a>
+                    <button type="button" class="btn btn-outline-secondary reset-btn">Réinitialiser</button>
+                    <button type="button" class="btn btn-primary next-btn" data-next="2">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Étape 2: Cursus -->
+            <div class="form-step" id="step2">
+                <div class="form-group">
+                    <label for="niveauEtude">Niveau d'étude actuel</label>
+                    <select class="form-control" id="niveauEtude" required>
+                        <option value="">Sélectionnez votre niveau</option>
+                        <option value="bac">Baccalauréat</option>
+                        <option value="bac+1">Bac+1</option>
+                        <option value="bac+2">Bac+2</option>
+                        <option value="bac+3">Bac+3</option>
+                        <option value="bac+4">Bac+4</option>
+                        <option value="bac+5">Bac+5 ou plus</option>
+                    </select>
+                    <div class="error-message">Veuillez sélectionner votre niveau d'étude</div>
+                </div>
+                
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" id="etablissement" placeholder=" " required>
+                    <label for="etablissement">Établissement précédent</label>
+                    <div class="error-message">Veuillez entrer votre établissement précédent</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="filiere">Filière souhaitée</label>
+                    <select class="form-control" id="filiere" required>
+                        <option value="">Sélectionnez une filière</option>
+                        <option value="informatique">Informatique et Systèmes d'Information</option>
+                        <option value="telecoms">Télécommunications et Réseaux</option>
+                        <option value="securite">Sécurité des Systèmes d'Information</option>
+                        <option value="multimedia">Multimédia et Technologies Web</option>
+                    </select>
+                    <div class="error-message">Veuillez sélectionner une filière</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="concours">Type de concours</label>
+                    <select class="form-control" id="concours" required>
+                        <option value="">Sélectionnez un type de concours</option>
+                        <option value="normal">Concours normal</option>
+                        <option value="special">Concours spécial</option>
+                        <option value="professionnel">Concours professionnel</option>
+                    </select>
+                    <div class="error-message">Veuillez sélectionner un type de concours</div>
+                </div>
+                
+                <div class="form-footer">
+                    <a href="/" class="btn btn-outline-secondary">Accueil</a>
+                    <button type="button" class="btn btn-outline-secondary prev-btn" data-prev="1">Précédent</button>
+                    <button type="button" class="btn btn-primary next-btn" data-next="3">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Étape 3: Documents -->
+            <div class="form-step" id="step3">
+                <div class="form-group">
+                    <label for="photo">Photo d'identité (format JPG/PNG, max 2Mo)</label>
+                    <div class="file-input-container">
+                        <div class="file-input-label">
+                            <i class="fa fa-upload"></i> Choisir un fichier
+                        </div>
+                        <input type="file" id="photo" accept="image/jpeg, image/png" required>
+                        <div class="file-name" id="photoName"></div>
+                    </div>
+                    <div class="error-message">Veuillez télécharger une photo d'identité</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cv">CV (format PDF, max 5Mo)</label>
+                    <div class="file-input-container">
+                        <div class="file-input-label">
+                            <i class="fa fa-upload"></i> Choisir un fichier
+                        </div>
+                        <input type="file" id="cv" accept="application/pdf" required>
+                        <div class="file-name" id="cvName"></div>
+                    </div>
+                    <div class="error-message">Veuillez télécharger votre CV</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="diplome">Dernier diplôme obtenu (format PDF, max 5Mo)</label>
+                    <div class="file-input-container">
+                        <div class="file-input-label">
+                            <i class="fa fa-upload"></i> Choisir un fichier
+                        </div>
+                        <input type="file" id="diplome" accept="application/pdf" required>
+                        <div class="file-name" id="diplomeName"></div>
+                    </div>
+                    <div class="error-message">Veuillez télécharger votre dernier diplôme</div>
+                </div>
+                
+                <div class="form-footer">
+                    <a href="/" class="btn btn-outline-secondary">Accueil</a>
+                    <button type="button" class="btn btn-outline-secondary prev-btn" data-prev="2">Précédent</button>
+                    <button type="button" class="btn btn-primary next-btn" data-next="4">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Étape 4: Validation -->
+            
+            <!-- Mise à jour de l'étape 4 du formulaire pour corriger les problèmes de message de succès -->
+<div id="step4" class="form-step">
+    <div class="form-content">
+        <h2>Valide ta candidature en appuyant sur le bouton en bas !</h2>
+        
+        
+        <!-- Un seul élément de message de succès -->
+        <div id="successMessage" style="display: none;" class="success-message">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Félicitations !</h3>
+                <p>Votre demande d'inscription a été envoyée avec succès. Nous vous contacterons prochainement.</p>
+            </div>
+        </div>
+        
+        <!-- Boutons du formulaire -->
+        <div class="form-buttons">
+            <button type="button" class="btn btn-outline-secondary prev-btn" data-prev="3">Précédent</button>
+            <button type="button" id="submitBtn" class="btn btn-primary submit-btn">Soumettre</button>
+        </div>
+    </div>
+</div>
+        </form>
+    </div>
+ 
+    <script src="{% static 'js/scr.js' %}"></script>
+</body>
+</html>

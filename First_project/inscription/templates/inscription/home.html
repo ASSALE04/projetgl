@@ -1,0 +1,114 @@
+ {% load static %}
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Page d'Accueil</title>
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <div class="logo" id="logo">JIFETIC</div>
+
+    </header>
+
+ <main class="main-content">
+
+ <div class="welcome-text" id="welcome-text">
+
+    <h1>Bienvenue sur notre site</h1>
+
+     <p>Nous sommes ravis de vous accueillir</p>
+
+</div>
+
+<div class="buttons" id="buttons">
+
+<a href="{% url 'inscrire' %}" class="btn register" id="register-btn">S'inscrire</a>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+
+            <h3>À propos</h3>
+
+            <p>ESATIC vous offre les meilleurs formations !.</p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact</h3>
+
+            <p>Email: contact@monsite.fr</p>
+
+            <p>Téléphone: +225 07 11 08 12 47</p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Suivez-nous</h3>
+
+            <div class="social-icons">
+
+                <span class="social-icon">FB</span>
+
+                <span class="social-icon">TW</span>
+
+                <span class="social-icon">IG</span>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        <div class="copyright">
+
+        <p>&copy; Merci de la visite !.</p>
+
+    </div>
+
+</footer>
+
+</div>
+
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn">&times;</span>
+
+        <h2 id="modal-title"></h2>
+
+        <p id="modal-text"></p>
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

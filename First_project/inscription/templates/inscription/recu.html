@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Reçu d'inscription</title>
+</head>
+<body>
+    <h2>Inscription validée !</h2>
+    <p>Merci {{ candidat.prenoms }} {{ candidat.nom }}.</p>
+    <p>Concours souhaité : {{ candidat.concours_souhaite }}</p>
+    <p>Date d’inscription : {{ candidat.date_inscription }}</p>
+
+    <button onclick="window.print()">Imprimer le reçu</button>
+</body>
+</html>
